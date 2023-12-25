@@ -46,7 +46,9 @@ async function getData(searchStr) {
     showTips(someData);
   }
 }
-
+let checkSpace = (string) => {
+  return string.trim() !== '';
+}
 let liRemoveAll = () => {
   ul.replaceChildren();
 };
@@ -55,16 +57,12 @@ let debounceRequest = debounce(getData, 400);
 
 input.addEventListener("input", (e) => {
   let { value } = e.target;
-  if (value) {
-    debounceRequest(value);
+  if (checkSpace(value)) {
+    debounceRequest(value.trim());
   }
 });
 
 ul.addEventListener("click", (e) => {
-  console.log(e);
-  console.log(e.target.dataset.name);
-  console.log(e.target.dataset.owner);
-  console.log(e.target.dataset.stars);
   let ul = document.querySelector(".useful-answer");
   ul.insertAdjacentHTML(
     "afterbegin",

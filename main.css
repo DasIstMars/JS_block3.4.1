@@ -53,6 +53,7 @@ body {
   padding-left: 10px;
   background-color: #e3e3e3;
   font-size: 30px;
+  overflow: hidden;
 }
 .answerlist-item:hover {
   background-color: #65cdf9;
@@ -77,10 +78,13 @@ body {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  overflow: hidden;
+  width: 410px;
 }
 .data__text {
   height: 34px;
   font-size: 24px;
+  text-wrap: nowrap;
 }
 .close-button {
   width: 40px;
@@ -88,5 +92,7 @@ body {
   background: url(close.png) no-repeat;
   background-size: contain;
   align-self: center;
-  margin: 25px;
+  margin-right: 25px;
+  box-sizing:content-box;
 }
+
